@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <title>Authority Dashboard</title>
+    <style>
+      :root { --bg:#f8fafc; --card:#fff; --border:#e5e7eb; --text:#0f172a; --muted:#64748b; --accent:#2563eb; }
+      *{ box-sizing:border-box }
+      body { margin:0; font-family: system-ui, Arial; background:var(--bg); color:var(--text); }
+      header { height:64px; display:flex; align-items:center; justify-content:space-between; padding: 0 16px; border-bottom:1px solid var(--border); background:#fff; position: sticky; top:0; z-index:10; }
+      .container { padding:16px; }
+      .kpis { display:grid; grid-template-columns: repeat(5, minmax(160px,1fr)); gap:12px; }
+      .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px; }
+      .kpi .label { color:var(--muted); font-size:12px }
+      .kpi .value { font-size:24px; font-weight:700; margin-top:4px }
+      .grid { display:grid; grid-template-columns: 2fr 1fr; gap:12px; margin-top:12px; }
+      #map { height: 480px; border-radius:10px; overflow:hidden }
+      .table { width:100%; border-collapse: collapse; }
+      .table th, .table td { padding:8px; border-bottom:1px solid var(--border); font-size:14px }
+      .pill { font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--border); color:#111; }
+      .pill.active { background:#def7ec; border-color:#10b981; color:#047857; }
+      .pill.inactive { background:#fee2e2; border-color:#ef4444; color:#991b1b; }
+      .alerts { max-height: 480px; overflow:auto; }
+      .alert { border-bottom:1px solid var(--border); padding:8px }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Authority Dashboard</strong>
+      <span style="color:var(--muted)">Prototype • No login (demo)</span>
+    </header>
+    <div class="container">
+      <div id="kpis" class="kpis"></div>
+      <div class="grid">
+        <div class="card">
+          <div id="root" style="height: 100%"></div>
+        </div>
+        <div class="card">
+          <strong>Alerts (live)</strong>
+          <div id="alerts" class="alerts"></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <strong>Tourists</strong>
+        <table class="table">
+          <thead><tr><th>Tourist</th><th>Last seen</th><th>Status</th><th>Joined</th><th>ID</th></tr></thead>
+          <tbody id="touristRows"></tbody>
+        </table>
+      </div>
+    </div>
+    <script type="module" src="/main.jsx"></script>
+  </body>
+</html>

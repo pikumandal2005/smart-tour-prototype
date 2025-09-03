@@ -1,0 +1,15 @@
+{
+  "register": "Register",
+  "name": "Name",
+  "phone": "Phone (optional)",
+  "start_sharing": "Start Sharing",
+  "stop_sharing": "Stop Sharing",
+  "sos": "SOS",
+  "end_sos": "End SOS",
+  "tips": "Allow location permission; iOS PWAs may pause in background—keep the tab visible during sharing.",
+  "keep_open": "Keep this page open for live updates.",
+  "sign_out": "Sign out",
+  "user_id_prompt": "Enter your User ID",
+  "language": "Language",
+  "chat_help": "Need help? Chat with us!"
+}

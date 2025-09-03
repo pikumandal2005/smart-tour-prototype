@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <title>Tourist Portal</title>
+    <style>
+      body { font-family: system-ui, Arial, sans-serif; margin: 0; background:#fafafa }
+      header { padding: 10px 14px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background:#fff }
+      .card { padding: 12px; }
+      #mapCard { width: 300px; height: 300px; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; background:#fff }
+      .row { display:flex; gap:14px; flex-wrap: wrap; align-items: flex-start; }
+      button { padding: 10px 14px; border-radius:6px; border:1px solid #ccc; background:#0b5; color:white; cursor:pointer; }
+      button.secondary { background:#eee; color:#222; }
+      .muted { color:#666; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.jsx"></script>
+  </body>
+</html>

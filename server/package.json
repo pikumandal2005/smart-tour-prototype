@@ -1,0 +1,12 @@
+{
+  "name": "smart-tour-server",
+  "type": "module",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "ws": "^8.18.0",
+    "nanoid": "^5.0.7"
+  }
+}
