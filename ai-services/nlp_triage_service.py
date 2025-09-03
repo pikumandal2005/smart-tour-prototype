@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify
 from transformers import pipeline
 from flask_cors import CORS
 import os
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 CORS(app)
@@ -17,5 +20,5 @@ def classify_incident():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5002))
+    logging.info(f"Starting Flask app on port {port}...")
     app.run(host='0.0.0.0', port=port)
-
