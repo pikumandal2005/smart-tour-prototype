@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from transformers import pipeline
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -15,4 +16,6 @@ def classify_incident():
     return jsonify({'severity': severity, 'label': result['label'], 'score': result['score']})
 
 if __name__ == '__main__':
-    app.run(port=5002)
+    port = int(os.environ.get('PORT', 5002))
+    app.run(host='0.0.0.0', port=port)
+
