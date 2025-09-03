@@ -1,12 +1,12 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route('/summary', methods=['GET'])
 def summary():
-    # Return dummy analytics summary
     return jsonify({
         'total_tourists': 10,
         'active_tourists': 7,
@@ -15,4 +15,6 @@ def summary():
     })
 
 if __name__ == '__main__':
-    app.run(port=5004)
+    port = int(os.environ.get('PORT', 5004))
+    app.run(host='0.0.0.0', port=port)
+
