@@ -1,12 +1,21 @@
 {
-  "name": "smart-tour-server",
+  "name": "smart-tour-backend",
+  "version": "1.0.0",
+  "description": "Backend service for Smart Tourist Safety Monitoring",
   "type": "module",
-  "scripts": { "start": "node server.js" },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "helmet": "^7.1.0",
-    "ws": "^8.18.0",
-    "nanoid": "^5.0.7"
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "nanoid": "^4.0.0",
+    "node-fetch": "^2.6.7",
+    "ws": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
