@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+import os
 from uuid import uuid4
 
 app = Flask(__name__)
@@ -7,7 +8,6 @@ CORS(app)
 
 @app.route('/get_updated_geofences', methods=['GET'])
 def get_geofences():
-    # Return demo geofence polygons with risk levels
     return jsonify([
         {
             'id': str(uuid4()),
@@ -30,4 +30,6 @@ def get_geofences():
     ])
 
 if __name__ == '__main__':
-    app.run(port=5003)
+    port = int(os.environ.get('PORT', 5003))
+    app.run(host='0.0.0.0', port=port)
+
